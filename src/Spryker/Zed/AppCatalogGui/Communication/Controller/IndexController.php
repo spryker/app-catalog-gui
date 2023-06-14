@@ -20,16 +20,25 @@ class IndexController extends AbstractController
      */
     public function indexAction(): array
     {
-        if (!$this->getFactory()->getStoreFacade()->isCurrentStoreDefined()) {
-            return $this->viewResponse();
-        }
         $localeTransfer = $this->getFactory()->getLocaleFacade()->getCurrentLocale();
-        $storeTransfer = $this->getFactory()->getStoreFacade()->getCurrentStore();
 
         return $this->viewResponse([
             'localeName' => mb_substr($localeTransfer->getLocaleNameOrFail(), 0, 2),
-            'storeReference' => $storeTransfer->getStoreReference() ?? '',
+            'storeReference' => $this->getStoreReference(),
             'appCatalogScriptUrl' => $this->getFactory()->getConfig()->getAppCatalogScriptUrl(),
         ]);
+    }
+
+    /**
+     * @return string
+     */
+    protected function getStoreReference(): string
+    {
+        $storeFacade = $this->getFactory()->getStoreFacade();
+        if (!$storeFacade->isCurrentStoreDefined()) {
+            return getenv('SPRYKER_TENANT_IDENTIFIER') ?: '';
+        }
+
+        return $storeFacade->getCurrentStore()->getStoreReference() ?? '';
     }
 }
