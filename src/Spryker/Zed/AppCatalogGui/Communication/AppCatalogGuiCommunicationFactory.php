@@ -29,7 +29,7 @@ class AppCatalogGuiCommunicationFactory extends AbstractCommunicationFactory
     }
 
     /**
-     * @return \Spryker\Zed\AppCatalogGui\Dependency\Facade\AppCatalogGuiToStoreFacadeInterface;
+     * @return \Spryker\Zed\AppCatalogGui\Dependency\Facade\AppCatalogGuiToStoreFacadeInterface
      */
     public function getStoreFacade(): AppCatalogGuiToStoreFacadeInterface
     {
