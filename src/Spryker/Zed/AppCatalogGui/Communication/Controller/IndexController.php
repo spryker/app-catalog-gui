@@ -29,9 +29,6 @@ class IndexController extends AbstractController
         ]);
     }
 
-    /**
-     * @return string
-     */
     protected function getTenantIdentifier(): string
     {
         $tenantIdentifier = $this->getFactory()->getConfig()->getTenantIdentifier();

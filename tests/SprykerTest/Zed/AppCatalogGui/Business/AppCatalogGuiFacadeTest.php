@@ -66,9 +66,6 @@ class AppCatalogGuiFacadeTest extends Unit
      */
     protected $expiresAt;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -76,9 +73,6 @@ class AppCatalogGuiFacadeTest extends Unit
         $this->expiresAt = (string)(time() + static::TEST_EXPIRES_IN);
     }
 
-    /**
-     * @return void
-     */
     public function testRequestAccessTokenReturnsValidToken(): void
     {
         // Arrange
@@ -99,9 +93,6 @@ class AppCatalogGuiFacadeTest extends Unit
         $this->assertEquals($this->expiresAt, $accessTokenResponseTransfer->getExpiresAt());
     }
 
-    /**
-     * @return void
-     */
     public function testRequestAccessTokenReturnsErrorWhenOauthRequestIsUnsuccessful(): void
     {
         // Arrange

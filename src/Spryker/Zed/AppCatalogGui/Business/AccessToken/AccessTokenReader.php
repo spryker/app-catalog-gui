@@ -35,11 +35,6 @@ class AccessTokenReader implements AccessTokenReaderInterface
      */
     protected $applicationCatalogGuiConfig;
 
-    /**
-     * @param \Spryker\Zed\AppCatalogGui\Dependency\Facade\AppCatalogGuiToTranslatorFacadeInterface $translatorFacade
-     * @param \Spryker\Zed\AppCatalogGui\Dependency\Facade\AppCatalogGuiToOauthClientFacadeInterface $oauthClientFacade
-     * @param \Spryker\Zed\AppCatalogGui\AppCatalogGuiConfig $applicationCatalogGuiConfig
-     */
     public function __construct(
         AppCatalogGuiToTranslatorFacadeInterface $translatorFacade,
         AppCatalogGuiToOauthClientFacadeInterface $oauthClientFacade,
@@ -50,9 +45,6 @@ class AccessTokenReader implements AccessTokenReaderInterface
         $this->applicationCatalogGuiConfig = $applicationCatalogGuiConfig;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\AccessTokenResponseTransfer
-     */
     public function requestAccessToken(): AccessTokenResponseTransfer
     {
         $accessTokenRequestOptions = (new AccessTokenRequestOptionsTransfer())

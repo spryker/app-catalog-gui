@@ -17,9 +17,6 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ApiLoginController extends AbstractController
 {
-    /**
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function indexAction(): JsonResponse
     {
         $accessTokenResponseTransfer = $this->getFacade()->requestAccessToken();

@@ -11,8 +11,5 @@ use Generated\Shared\Transfer\AccessTokenResponseTransfer;
 
 interface AccessTokenReaderInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\AccessTokenResponseTransfer
-     */
     public function requestAccessToken(): AccessTokenResponseTransfer;
 }

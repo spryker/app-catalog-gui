@@ -20,25 +20,16 @@ use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
  */
 class AppCatalogGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\AppCatalogGui\Dependency\Facade\AppCatalogGuiToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): AppCatalogGuiToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(AppCatalogGuiDependencyProvider::FACADE_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Zed\AppCatalogGui\Dependency\Facade\AppCatalogGuiToStoreFacadeInterface
-     */
     public function getStoreFacade(): AppCatalogGuiToStoreFacadeInterface
     {
         return $this->getProvidedDependency(AppCatalogGuiDependencyProvider::FACADE_STORE);
     }
 
-    /**
-     * @return \Spryker\Zed\AppCatalogGui\Communication\Mapper\OauthClientResponseTransferToResponseDataMapperInterface
-     */
     public function createOauthClientResponseTransferToResponseDataMapper(): OauthClientResponseTransferToResponseDataMapperInterface
     {
         return new OauthClientResponseTransferToResponseDataMapper();
