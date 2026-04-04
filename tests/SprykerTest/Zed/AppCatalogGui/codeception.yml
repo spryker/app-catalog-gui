@@ -21,6 +21,7 @@ suites:
                 - \SprykerTest\Shared\Testify\Helper\Environment
                 - \SprykerTest\Shared\Testify\Helper\BusinessHelper
                 - \SprykerTest\Shared\Propel\Helper\ConnectionHelper
+                - \SprykerTest\Shared\Propel\Helper\TransactionHelper
                 - \SprykerTest\Shared\Testify\Helper\DependencyHelper
                 - \SprykerTest\Service\Container\Helper\ContainerHelper
                 - \SprykerTest\Zed\Store\Helper\StoreDependencyHelper
